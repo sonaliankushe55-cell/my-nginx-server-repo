@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                git 'https://github.com/sonaliankushe55-cell/my-nginx-server-repo.git'
+            }
+        }
+
+        stage('Deploy Using Ansible') {
+            steps {
+                sh '''
+                cd /home/ubuntu/ansible-project
+                ansible-playbook -i hosts deploy.yml
+                '''
+            }
+        }
+    }
+}
