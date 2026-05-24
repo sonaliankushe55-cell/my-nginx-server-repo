@@ -5,7 +5,8 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/sonaliankushe55-cell/my-nginx-server-repo.git'
+                git branch: 'main',
+                    url: 'https://github.com/sonaliankushe55-cell/my-nginx-server-repo.git'
             }
         }
 
