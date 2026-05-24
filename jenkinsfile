@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy Using Ansible') {
             steps {
                 sh '''
-                cd /home/ubuntu/ansible-project
+                cd /home/ubuntu/nginx-project
                 ansible-playbook -i hosts deploy.yml
                 '''
             }
